@@ -1,3 +1,4 @@
+
 import java.util.Random;
 
 public class HW4 {
@@ -8,7 +9,7 @@ public class HW4 {
     public static String bossDefence;
     public static int[] heroesHealth = {280, 270, 240, 360, 500, 200, 300, 240};
     public static int[] heroesDamage = {15, 20, 10, 0, 5, 20, 0, 20};
-    public static String[] heroesAttackType = {"Physical", "Magical", "Kinetic", "Medic", "Golem", "Lucky", "Whitch", "Thor"};
+    public static String[] heroesAttackType = {"Physical", "Magical", "Kinetic", "Medic", "Golem", "Lucky", "Which", "Thor"};
     public static int roundNumber;
     public static Random random = new Random();
 
