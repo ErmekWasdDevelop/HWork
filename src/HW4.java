@@ -89,11 +89,9 @@ public class HW4 {
 
                 } else if (heroesHealth[4] > 0) {
                     heroesHealth[i] = heroesHealth[i] < bossDamage ? 0 : heroesHealth[i] - golemDefence;
-                    heroesHealth[4] = heroesHealth[4] < bossDamage ? 0 :heroesHealth[4] - bossDamage;
 
                 } else if (lucky && (heroesHealth[6] > 0)) {
                     if (heroesHealth[4] > 0) {
-                        heroesHealth[4] = heroesHealth[4] - bossDamage ;
                         heroesHealth[i] = heroesHealth[i] < golemDefence ? 0 : heroesHealth[i] - golemDefence;
                         heroesHealth[6] = heroesHealth[6] + golemDefence;
 
@@ -116,7 +114,7 @@ public class HW4 {
             if (heroesHealth[i] > 0 && bossHealth > 0) {
                 int damage = heroesDamage[i];
                 if (heroesAttackType[i] == bossDefence) {
-                    int coeff = random.nextInt(2, 10); // 2,3,4,5,6,7,8,9
+                    int coeff = random.nextInt(2, 5); // 2,3,4,5,6,7,8,9
                     damage = damage * coeff;
                     System.out.println("Critical damage: " + damage);
                 }
