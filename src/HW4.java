@@ -86,19 +86,20 @@ public class HW4 {
             if (heroesHealth[i] > 0) {
                 if (heroesHealth[7] > 0 && Stun) {
                     heroesHealth[i] = heroesHealth[i] - bossDamage * 0;
-                }else if(heroesHealth[4]<0){ heroesHealth[4] = 0;
+
                 } else if (heroesHealth[4] > 0) {
                     heroesHealth[i] = heroesHealth[i] < bossDamage ? 0 : heroesHealth[i] - golemDefence;
-                    heroesHealth[4] = heroesHealth[4] + golemDefence - (bossDamage + (bossDamage / 5));
+                    heroesHealth[4] = heroesHealth[4] < bossDamage ? 0 :heroesHealth[4] - bossDamage;
 
                 } else if (lucky && (heroesHealth[6] > 0)) {
                     if (heroesHealth[4] > 0) {
+                        heroesHealth[4] = heroesHealth[4] - bossDamage ;
                         heroesHealth[i] = heroesHealth[i] < golemDefence ? 0 : heroesHealth[i] - golemDefence;
-                        heroesHealth[6] = heroesHealth[6] - golemDefence;
-                        heroesHealth[4] = heroesHealth[4]  +golemDefence - (bossDamage + (bossDamage / 5)) ;
+                        heroesHealth[6] = heroesHealth[6] + golemDefence;
+
                     }else {
                         heroesHealth[i] = heroesHealth[i] < bossDamage ? 0 : heroesHealth[i] - bossDamage;
-                        heroesHealth[6] = heroesHealth[6] < bossDamage ? 0 : heroesHealth[6] - bossDamage;
+                        heroesHealth[6] = heroesHealth[6] + bossDamage;
                     }
 
 
