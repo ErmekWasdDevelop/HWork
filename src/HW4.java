@@ -75,10 +75,6 @@ public class HW4 {
         }
     }
 
-    public static void golemAura() {
-
-    }
-
     public static void bossAttack() {
         boolean Stun = random.nextBoolean();
         int chance = random.nextInt(1, 4);
