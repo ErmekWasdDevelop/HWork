@@ -57,7 +57,7 @@ public class HW4 {
     public static void setRandomHeal() {
         int heal = random.nextInt(50, 100);
         for (int i = 0; i < heroesAttackType.length; i++) {
-            if (heroesHealth[i] < 100 && heroesHealth[i] > 0 && heroesHealth[3] > 0) {
+            if (heroesHealth[i] < 100 && heroesHealth[i] > 0 && heroesHealth[3] > 0&& i!=3) {
                 heroesHealth[i] = heroesHealth[i] + heal;
                 System.out.println("HEAL = " + heal);
                 break;
