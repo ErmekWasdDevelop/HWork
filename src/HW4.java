@@ -2,9 +2,9 @@ import java.util.Random;
 
 public class HW4 {
 
-    public static int bossHealth = 1200;
+    public static int bossHealth = 1500;
     public static int bossDamage = 50;
-    public static int golemDefence = bossDamage * 4 / 5;
+    public static int golemDefence = bossDamage/5*4;
     public static String bossDefence;
     public static int[] heroesHealth = {280, 270, 240, 360, 500, 200, 300, 240};
     public static int[] heroesDamage = {15, 20, 10, 0, 5, 20, 0, 20};
@@ -87,17 +87,20 @@ public class HW4 {
                     heroesHealth[i] = heroesHealth[i] - bossDamage * 0;
                 } else if (heroesHealth[4] > 0) {
                     heroesHealth[i] = heroesHealth[i] < bossDamage ? 0 : heroesHealth[i] - golemDefence;
-                    heroesHealth[4] = heroesHealth[4] < bossDamage ? 0 : heroesHealth[4] - (bossDamage + bossDamage / 5);
-                    if (heroesHealth[4]<0){heroesHealth[4] = 0;}
+                    heroesHealth[4] = heroesHealth[4] - (bossDamage + bossDamage / 4 * 5);
+
+                }else if(heroesHealth[4]<0){ heroesHealth[4] = 0;
+
                 } else if (lucky && (heroesHealth[6] > 0)) {
                     if (heroesHealth[4] > 0) {
                         heroesHealth[i] = heroesHealth[i] < golemDefence ? 0 : heroesHealth[i] - golemDefence;
                         heroesHealth[6] = heroesHealth[6] - golemDefence;
-                        heroesHealth[4] = heroesHealth[4] < bossDamage ? 0 : heroesHealth[4] - (bossDamage + bossDamage / 5);
-                        if (heroesHealth[4]<0){heroesHealth[4] = 0;}else{
-                            heroesHealth[i] = heroesHealth[i] < bossDamage ? 0 : heroesHealth[i] - bossDamage;
-                        }
+                        heroesHealth[4] = heroesHealth[4]  - (bossDamage + bossDamage / 5) ;
+                    }else {
+                        heroesHealth[i] = heroesHealth[i] < bossDamage ? 0 : heroesHealth[i] - bossDamage;
+                        heroesHealth[6] = heroesHealth[6] < bossDamage ? 0 : heroesHealth[6] - bossDamage;
                     }
+
 
                 } else {
                     heroesHealth[i] = heroesHealth[i] < bossDamage ? 0 : heroesHealth[i] - bossDamage;
