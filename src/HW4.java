@@ -92,7 +92,7 @@ public class HW4 {
                 } else if (lucky && (heroesHealth[6] > 0)) {
                     if (heroesHealth[4] > 0) {
                         heroesHealth[i] = heroesHealth[i] < golemDefence ? 0 : heroesHealth[i] - golemDefence;
-                        heroesHealth[6] = heroesHealth[6] + golemDefence;
+                        heroesHealth[6] = heroesHealth[6] - golemDefence;
                         heroesHealth[4] = heroesHealth[4] < bossDamage ? 0 : heroesHealth[4] - (bossDamage + bossDamage / 5);
                         if (heroesHealth[4]<0){heroesHealth[4] = 0;}else{
                             heroesHealth[i] = heroesHealth[i] < bossDamage ? 0 : heroesHealth[i] - bossDamage;
