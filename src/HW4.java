@@ -80,11 +80,11 @@ public class HW4 {
         int chance = random.nextInt(1, 4);
         boolean lucky = false;
         if (chance == 4) {lucky = true;}
+        if (Stun == true){System.out.println("BOSS STUN!!!");}
         for (int i = 0; i < heroesHealth.length; i++) {
             if (heroesHealth[i] > 0) {
                 if (heroesHealth[7] > 0 && Stun) {
                     heroesHealth[i] = heroesHealth[i] - bossDamage * 0;
-                    if (Stun == true){System.out.println("BOSS STUN!!!");}
                 } else if (heroesHealth[4] > 0) {
                     heroesHealth[i] = heroesHealth[i] < bossDamage ? 0 : heroesHealth[i] - golemDefence;
                     heroesHealth[4] = heroesHealth[4] < bossDamage ? 0 : heroesHealth[4] - (bossDamage + bossDamage / 5);
